@@ -117,20 +117,19 @@ console.log(types(true));
 
 // Answer # 10 
 
-function func(arr_num) {
-    arr_num.sort(function (x, y) {
-        return x - y;
-    });
-    var getSorting = [arr_num[0]];
+function getNums() {
+    var arr = [1, 2, 3, 4, 5]
+    console.log(arr);
+    var max = Math.max.apply(null, arr);
+    // console.log(max);
+    arr.splice(arr.indexOf(max), 1)
+    var secMax = Math.max.apply(null, arr);
+    var min = Math.min.apply(null, arr);
+    // console.log(min);
+    arr.splice(arr.indexOf(min), 1)
+    var secMin = Math.min.apply(null, arr);
     var result = [];
-
-    for (var i = 1; i < arr_num.length; i++) {
-        if (arr_num[i - 1] !== arr_num[i]) {
-            getSorting.push(arr_num[i]);
-        }
-    }
-    result.push(getSorting[1], getSorting[getSorting.length - 2]);
-    return result.join(',');
+    result.push(secMax, secMin);
+    console.log(result);
+    document.write(result);
 }
-
-console.log(func([1, 2, 3, 4, 5]));
