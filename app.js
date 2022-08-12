@@ -99,21 +99,22 @@ function primeNumber() {
 // Answer # 9 
 
 function types(value) {
-    var dtypes = [Function,Number, String, Boolean, Object], x, len;
+    // var dtypes = [Function,Number, String, Boolean, Object], x, len;
 
-    if (typeof value === "object" || typeof value === "function") {
-        for (x = 0, len = dtypes.length; x < len; x++) {
-            if (value instanceof dtypes[x]) {
-                return dtypes[x];
-            }
-        }
-    }
+    // if (typeof value === "object" || typeof value === "function") {
+    //     for (x = 0, len = dtypes.length; x < len; x++) {
+    //         if (value instanceof dtypes[x]) {
+    //             return dtypes[x];
+    //         }
+    //     }
+    // }
 
     return typeof value;
 }
 console.log(types(65));
 console.log(types('Hello World'));
 console.log(types(true));
+console.log(types(function () {}));
 
 // Answer # 10 
 
